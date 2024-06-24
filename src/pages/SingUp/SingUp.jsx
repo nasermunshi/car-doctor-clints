@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
 
-const Login = () => {
-  
- const handleLogin = event =>{
-   event.preventDefault();                 
+
+const SingUp = () => {
+
+const handleSingUp = event =>{
+event.preventDefault();                 
  }
 
- return (
+  return (
 <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content flex-col lg:flex-row">
     <div className=" w-1/2 mr-12">
@@ -15,8 +16,14 @@ const Login = () => {
     </div>
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form className="card-body">
-      <h1 className="text-5xl font-bold">Login now</h1>
-     <form onSubmit={handleLogin}>
+      <h1 className="text-5xl font-bold">Sing Up</h1>
+     <form onSubmit={handleSingUp }>
+     <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
+          </label>
+          <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+        </div>
      <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -25,7 +32,7 @@ const Login = () => {
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Password</span>
+            <span className="label-text">Confrom Password</span>
           </label>
           <input type="password" name='password' placeholder="password" className="input input-bordered" required />
           <label className="label">
@@ -33,15 +40,16 @@ const Login = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <input className="btn btn-primary" type="submit" value="Login" />
+          <input className="btn btn-primary" type="submit" value="Sing Up" />
         </div>            
      </form>
       </form>
-      <p className='text-center my-4'>New to Cars Doctor <Link className='text-orange-700 font-bold' to="/singup">Sins Up</Link></p>
+      <p className='text-center my-4'>Already Have an Account?<Link className='text-orange-700 font-bold'
+       to="/login">Login</Link></p>
     </div>
   </div>
 </div>
-  );
+ );
 };
 
-export default Login;
+export default SingUp;
